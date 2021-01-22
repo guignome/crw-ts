@@ -6,8 +6,8 @@ ENV PKGS="nodejs npm nodejs-nodemon nss_wrapper rsync" \
 # Update image
 RUN yum update --disablerepo=* --enablerepo=ubi-8-appstream --enablerepo=ubi-8-baseos -y && rm -rf /var/cache/yum
 RUN yum install --disablerepo=* --enablerepo=ubi-8-appstream --enablerepo=ubi-8-baseos ${PKGS} -y &&\
-  rm -rf /var/cache/yum
-  && mkdir ${APP_ROOT}
+  rm -rf /var/cache/yum &&\
+  mkdir ${APP_ROOT}
 WORKDIR ${APP_ROOT}
 EXPOSE 80
 # Start the service
