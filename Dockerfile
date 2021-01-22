@@ -6,8 +6,6 @@ ENV PKGS="nodejs npm nodejs-nodemon nss_wrapper rsync"
 RUN yum update --disablerepo=* --enablerepo=ubi-8-appstream --enablerepo=ubi-8-baseos -y && rm -rf /var/cache/yum
 RUN yum install --disablerepo=* --enablerepo=ubi-8-appstream --enablerepo=ubi-8-baseos ${PKGS} -y &&\
   rm -rf /var/cache/yum
-# Add default Web page and expose port
-RUN echo "The Web Server is Running" > /var/www/html/index.html
 
 EXPOSE 80
 # Start the service
