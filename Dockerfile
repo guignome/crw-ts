@@ -10,6 +10,4 @@ RUN yum install --disablerepo=* --enablerepo=ubi-8-appstream --enablerepo=ubi-8-
   mkdir ${APP_ROOT}
 WORKDIR ${APP_ROOT}
 EXPOSE 80
-# Start the service
-CMD ["npm", "run", "start"]
 ENTRYPOINT ["/bin/sh"]
