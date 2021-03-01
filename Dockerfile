@@ -5,10 +5,10 @@ ENV PKGS="nodejs npm nodejs-nodemon nss_wrapper rsync git maven java-11-openjdk-
     APP_ROOT="/opt/app-root"
 # Update image
 RUN
- subscription-manager register &&\
- subscription-manager refresh &&\
+ #subscription-manager register &&\
+ #subscription-manager refresh &&\
  #subscription-manager repos --enable rhel-7-server-ansible-VERSION-rpms &&\
- subscription-manager repos --enable ansible-2.8-for-rhel-8-x86_64-rpms
+ #subscription-manager repos --enable ansible-2.8-for-rhel-8-x86_64-rpms
 RUN yum update --disablerepo=* --enablerepo=ubi-8-appstream --enablerepo=ubi-8-baseos -y && rm -rf /var/cache/yum
 RUN yum install --disablerepo=* --enablerepo=ubi-8-appstream --enablerepo=ubi-8-baseos ${PKGS} -y &&\
   rm -rf /var/cache/yum &&\
